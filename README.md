@@ -1,2 +1,18 @@
-# Ajuste-de-Curvas
-Trabalho de matemática computacional (4° período) do IFF de Itaperuna
+## 📖 Sobre
+
+Trabalho da matéria de Matemática Computacional do Instituto Federal de Educação Ciência e Tecnologia Fluminense Itaperuna.
+
+## 💻 Tecnologias
+
+O projeto está desenvolvido utilizando as seguintes tecnologias:
+
+- C
+## Rodar o projeto
+
+$ git clone https://github.com/lucasmartinsribeiro/Ajuste-de-Curvas
+
+$ cd Ajuste-de-Curvas
+
+$ gcc main.c linearizacao.c parabolico.c -o main -lm
+
+$ ./main
