@@ -12,8 +12,7 @@
 double equacao_linear(int tam, double matNum[][COLUNA]){
     double vetNum[TAM_VET_COEF],A0=0,A1=0;
     int escX=0,escY=0;
-    for(int i=0;i<TAM_VET_COEF;i++)
-    {
+    for(int i=0;i<TAM_VET_COEF;i++){
         vetNum[i]=0;
     }
     criar_vetCoef(escX,escY,tam,vetNum,matNum);
@@ -21,15 +20,14 @@ double equacao_linear(int tam, double matNum[][COLUNA]){
     A1=coef_angular_A1(tam,vetNum);
     
     printf("\n");
-    printf("EQUAÇÃO LINEAR DA RETA  y= %lf + %lf*x\n",A0,A1);
+    printf("EQUACAO LINEAR DA RETA  y= %lf + %lf*x\n",A0,A1);
     return quali(1,tam, vetNum,matNum, A0, A1);
 }
 
 double equacao_expo(int tam, double matNum[][COLUNA]){
     double vetNum[TAM_VET_COEF],A0=0,A1=0;
     int escX=0,escY=1;
-    for(int i=0;i<TAM_VET_COEF;i++)
-    {
+    for(int i=0;i<TAM_VET_COEF;i++){
         vetNum[i]=0;
     }
     criar_vetCoef(escX,escY,tam,vetNum,matNum);
@@ -37,15 +35,14 @@ double equacao_expo(int tam, double matNum[][COLUNA]){
     A1=coef_angular_A1(tam,vetNum);
     
     printf("\n");
-    printf("EQUAÇÃO EXPONENCIAL y= %lf * e^%lf*x\n",A0,A1);
+    printf("EQUACAO EXPONENCIAL y= %lf * e^%lf*x\n",A0,A1);
     return quali(2,tam, vetNum,matNum, A0, A1);
 }
 
 double equacao_log(int tam, double matNum[][COLUNA]){
     double vetNum[TAM_VET_COEF],A0=0,A1=0;
     int escX=1,escY=0;
-    for(int i=0;i<TAM_VET_COEF;i++)
-    {
+    for(int i=0;i<TAM_VET_COEF;i++){
         vetNum[i]=0;
     }
     criar_vetCoef(escX,escY,tam,vetNum,matNum);
@@ -53,15 +50,14 @@ double equacao_log(int tam, double matNum[][COLUNA]){
     A1=coef_angular_A1(tam,vetNum);
     
     printf("\n");
-    printf("EQUAÇÃO LOGARITIMICA y= %lf + %lf*ln(x)\n",A0,A1);
+    printf("EQUACAO LOGARITIMICA y= %lf + %lf*ln(x)\n",A0,A1);
     return quali(3,tam, vetNum,matNum, A0, A1);
 }
 
 double equacao_pote(int tam, double matNum[][COLUNA]){
     double vetNum[TAM_VET_COEF],A0=0,A1=0;
     int escX=1,escY=1;
-    for(int i=0;i<TAM_VET_COEF;i++)
-    {
+    for(int i=0;i<TAM_VET_COEF;i++){
         vetNum[i]=0;
     }
     criar_vetCoef(escX,escY,tam,vetNum,matNum);
@@ -69,15 +65,14 @@ double equacao_pote(int tam, double matNum[][COLUNA]){
     A1=coef_angular_A1(tam,vetNum);
     
     printf("\n");
-    printf("EQUAÇÃO POTENCIAL y= %lf*x^%lf\n",A0,A1);
+    printf("EQUACAO POTENCIAL y= %lf*x^%lf\n",A0,A1);
     return quali(4,tam, vetNum,matNum, A0, A1);
 }
 
 double equacao_hiper(int tam, double matNum[][COLUNA]){
     double vetNum[TAM_VET_COEF],A0=0,A1=0;
     int escX=2,escY=0;
-    for(int i=0;i<TAM_VET_COEF;i++)
-    {
+    for(int i=0;i<TAM_VET_COEF;i++){
         vetNum[i]=0;
     }
     criar_vetCoef(escX,escY,tam,vetNum,matNum);
@@ -85,18 +80,16 @@ double equacao_hiper(int tam, double matNum[][COLUNA]){
     A1=coef_angular_A1(tam,vetNum);
     
     printf("\n");
-    printf("EQUAÇÃO HIPERBÓLICO  y= %lf + %lf/x\n",A0,A1);
+    printf("EQUACAO HIPERBOLICO  y= %lf + %lf/x\n",A0,A1);
     return quali(5,tam, vetNum,matNum, A0, A1);
 }
 
 //                                FUNÇÕES DE LINEARIZAÇÃO
 double log_natural(double valor, int esc){
-    if(esc==0)
-    {
+    if(esc==0){
         return valor;
     } else
-        if(esc==2)
-        {
+        if(esc==2){
             return 1/valor;
         } else {
             return log(valor);
@@ -104,8 +97,7 @@ double log_natural(double valor, int esc){
 }
 
 void criar_vetCoef(int escX, int escY,int tam,double *vetCoef,double matNum[][COLUNA]){
-    for(int i=0;i<tam;i++)
-    {
+    for(int i=0;i<tam;i++){
         vetCoef[SOMA_X] += log_natural(matNum[i][X], escX);
         vetCoef[SOMA_X2] += pow(log_natural(matNum[i][X],escX),2);
        

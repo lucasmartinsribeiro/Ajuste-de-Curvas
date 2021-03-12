@@ -1,6 +1,8 @@
 #include"ajustes_curvas.h"
+
 // TAMANHO DO VETOR AUXILIAR
-#define VET_AUX 8
+#define VET_AUX 11
+
 // POSIÇÕES DO VETOR AUXILIAR
 #define TAM 0
 #define SOMA_X1 1
@@ -30,7 +32,7 @@ double equacao_curva(int tam, double matNum[][COLUNA]){
     //double numeros[3][4] =  {2,1,1,8,1,1,4,15,3,2,9};
     //double numeros[3][4]={1,1,1,12,2,-1,2,12,1,-1,-3,-16};
     gauss(matrix_coef,vetorA);
-    printf("Equação da curva -> y = %lf +(%lf*x)+(%lf*(x^2))\n",vetorA[A0],vetorA[A1],vetorA[A2]);
+    printf("Equacao da curva -> y = %lf +(%lf*x)+(%lf*(x^2))\n",vetorA[A0],vetorA[A1],vetorA[A2]);
     //gauss(numeros,vetorA);
 }
 
@@ -147,19 +149,16 @@ void print_matriz_num(int tam,double matCoef[][COLUNA]){
 }
 
 /*
-    for(int i=0;i<L_MAT_COEF;i++)
-    {
+    for(int i=0;i<L_MAT_COEF;i++){
         contAux=0;
-        for(int j=0;j<(C_MAT_COEF);j++)
-        {
+        for(int j=0;j<(C_MAT_COEF);j++){
             if(i+j==3)
                 contAux++;
             if(j==i && j<1)
                 matCoef[i][j]=vetAux[TAM];
             if(i>0 || j>0)
                 matCoef[i][j]=vetAux[contAux+1]; printf("[%d][%d]\n",i,j);
-            if(i==3)
-            {
+            if(i==3){
                 contAux=4;
                 matCoef[i][j]=vetAux[contAux+1];
             }
