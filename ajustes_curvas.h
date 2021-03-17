@@ -44,8 +44,8 @@ double equacao_curva(int tam, double matNum[][COLUNA]);
 
 
 
-//                                 FUNÇÃO PARA CALCULAR O COEFICIENTE D PEARSON
-double quali(int esc,int tam, double *vetCoef, double matNum[][COLUNA], double A0, double A1);
+//                                          FUNÇÃO PARA CALCULAR O COEFICIENTE D PEARSON
+double quali(int esc,int tam, double matNum[][COLUNA], double A0, double A1,double A2);
 
 
 
